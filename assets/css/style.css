@@ -971,9 +971,9 @@ a.stats-box:hover{
 }
 
 .media-quote{
-  font-size: clamp(1.6rem, 1rem + 1.85vw, 3.05rem);
+  font-size: 28px;
   font-weight: 500;
-  line-height: 1.22;
+  line-height: 1.28;
   max-width: 980px;
   color: #fff;
   text-wrap: balance;
@@ -983,6 +983,31 @@ a.stats-box:hover{
 
 .quote-maxw{
   max-width: 460px;
+}
+
+.rec-books-grid > [class*="col-"]{
+  display: flex;
+}
+
+.rec-books-grid .card-book{
+  width: 100%;
+  height: 100%;
+}
+
+.rec-books-grid .card-book .p{
+  min-height: 118px;
+}
+
+.rec-books-grid .card-book .p .clamp-2{
+  min-height: 2.8em;
+}
+
+.rec-books-grid .card-book .p .clamp-1{
+  min-height: 1.5em;
+}
+
+.rec-books-grid .card-book .p > :last-child{
+  margin-top: auto !important;
 }
 
 .hero-author{
@@ -1441,6 +1466,7 @@ a.stats-box:hover{
   }
 
   .media-quote{
+    font-size: 24px;
     line-height: 1.38;
   }
 
