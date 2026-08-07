@@ -625,73 +625,113 @@ body{
   top: 0;
   z-index: 100;
   height: auto;
-  min-height: 94px;
-  padding: .7rem 0;
+  min-height: 96px;
+  padding: .75rem 0;
   border-bottom: 1px solid rgba(255,255,255,.1);
   background:
-    linear-gradient(130deg, rgba(10,23,53,.96), rgba(8,18,41,.96));
+    linear-gradient(135deg, rgba(9,20,48,.98), rgba(13,31,77,.96) 52%, rgba(8,18,41,.98));
   backdrop-filter: blur(12px);
-  box-shadow: 0 16px 40px rgba(2, 6, 23, .32);
+  box-shadow: 0 18px 44px rgba(2, 6, 23, .28);
+}
+
+.topbar-shell{
+  row-gap: 14px;
 }
 
 .brand{
-  gap: 14px;
+  gap: 16px;
+  min-width: 0;
+}
+
+.brand-mark{
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.brand-mark::after{
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 24px;
+  background: radial-gradient(circle, rgba(107,170,255,.34), rgba(107,170,255,0));
+  filter: blur(14px);
+  opacity: .8;
 }
 
 .brand img{
+  position: relative;
+  z-index: 1;
   width: 66px;
   height: 66px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.22);
-  box-shadow: 0 12px 30px rgba(0,0,0,.28);
+  border-radius: 20px;
+  padding: 4px;
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(255,255,255,.24);
+  box-shadow: 0 14px 32px rgba(0,0,0,.24);
+}
+
+.brand-copy{
+  min-width: 0;
+  display: flex;
+  align-items: center;
 }
 
 .brand .title{
   width: auto;
-  max-width: min(45vw, 520px);
-  font-size: clamp(1.12rem, .95rem + .6vw, 1.5rem);
-  font-weight: 700;
-  letter-spacing: .01em;
+  max-width: min(44vw, 520px);
+  font-size: clamp(1.18rem, 1rem + .72vw, 1.7rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0;
+  text-wrap: balance;
+  text-shadow: 0 1px 0 rgba(255,255,255,.08);
+}
+
+.nav-pill{
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
 .nav-pill a{
+  position: relative;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:.55rem;
-  min-height:44px;
-  padding: 10px 16px;
+  gap:.6rem;
+  min-height:46px;
+  padding: 11px 18px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.2);
-  background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.04));
+  border: 1px solid rgba(255,255,255,.16);
+  background: linear-gradient(145deg, rgba(255,255,255,.11), rgba(255,255,255,.04));
   color: #fff;
   font-weight: 700;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 8px 20px rgba(2, 6, 23, .2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 10px 24px rgba(2, 6, 23, .18);
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
 }
 
 .nav-pill a:hover,
 .nav-pill a.is-active{
-  background: linear-gradient(135deg, #2f6fff, #2156d8);
-  border-color: rgba(255,255,255,.38);
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border-color: rgba(147,197,253,.72);
   color: #fff;
-  box-shadow: 0 14px 30px rgba(16, 66, 185, .35);
+  box-shadow: 0 16px 32px rgba(16, 66, 185, .34);
   transform: translateY(-2px);
 }
 
 .menu-dot{
-  width:8px;
-  height:8px;
+  width:9px;
+  height:9px;
   border-radius:50%;
-  background: rgba(255,255,255,.65);
-  box-shadow: 0 0 0 4px rgba(255,255,255,.08);
+  background: rgba(255,255,255,.7);
+  box-shadow: 0 0 0 5px rgba(255,255,255,.07);
   transition: transform .22s ease, background .22s ease;
 }
 
 .nav-pill a:hover .menu-dot,
 .nav-pill a.is-active .menu-dot{
-  background:#8bf3ff;
-  transform: scale(1.08);
+  background:#dbeafe;
+  transform: scale(1.12);
 }
 
 .stats-box{
@@ -1173,8 +1213,12 @@ a.stats-box:hover{
 
 @media (max-width: 991px){
   .topbar{
-    min-height: 84px;
-    padding: .6rem 0;
+    min-height: 86px;
+    padding: .65rem 0;
+  }
+
+  .topbar-shell{
+    align-items: center;
   }
 
   .brand img{
@@ -1183,7 +1227,12 @@ a.stats-box:hover{
   }
 
   .brand .title{
-    max-width: 56vw;
+    max-width: 62vw;
+  }
+
+  .nav-pill{
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .media-hero,
@@ -1212,15 +1261,24 @@ a.stats-box:hover{
 }
 
 @media (max-width: 576px){
+  .brand{
+    gap: 12px;
+  }
+
   .nav-pill{
     width:100%;
     justify-content:flex-start;
   }
 
   .nav-pill a{
-    min-height:40px;
-    padding:8px 12px;
+    min-height:42px;
+    padding:9px 14px;
     font-size:.92rem;
+  }
+
+  .brand .title{
+    max-width: 72vw;
+    font-size: 1.05rem;
   }
 
   .media-hero-content{

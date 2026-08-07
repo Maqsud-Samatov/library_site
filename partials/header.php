@@ -2,7 +2,10 @@
 require_once __DIR__ . "/../app/config.php";
 require_once __DIR__ . "/../app/functions.php";
 
-$site_title = get_setting($pdo, 'site_title', 'Online Library');
+$site_title = trim(get_setting($pdo, 'site_title', ''));
+if ($site_title === '' || mb_strtolower($site_title) === 'online library') {
+  $site_title = 'Onlayn Kutubxona';
+}
 $logo_path  = get_setting($pdo, 'logo_path', 'assets/img/logo.png');
 $navbar     = get_json_setting($pdo, 'navbar_json', [
   ['label'=>'Bosh sahifa','href'=>'index.php'],
@@ -22,10 +25,14 @@ $navbar     = get_json_setting($pdo, 'navbar_json', [
 </head>
 <body>
 <header class="topbar py-3">
-  <div class="container d-flex align-items-center justify-content-between gap-3 flex-wrap">
+  <div class="container topbar-shell d-flex align-items-center justify-content-between gap-3 flex-wrap">
     <div class="brand">
-      <img class="img-hide-onerror" src="<?= e($logo_path) ?>" alt="logo" onerror="this.classList.add('is-hidden')">
-      <div class="title"><?= e($site_title) ?></div>
+      <div class="brand-mark">
+        <img class="img-hide-onerror" src="<?= e($logo_path) ?>" alt="logo" onerror="this.classList.add('is-hidden')">
+      </div>
+      <div class="brand-copy">
+        <div class="title"><?= e($site_title) ?></div>
+      </div>
     </div>
 
     <nav class="d-flex gap-2 nav-pill flex-wrap" aria-label="Main menu">
