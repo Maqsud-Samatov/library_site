@@ -1,0 +1,16 @@
+# uploads
+assets/uploads/
+
+# configs with secrets
+app/config.php
+api_db.php
+app/baza_nomi.sql
+
+# logs & cache
+*.log
+/tmp
+/cache
+
+# OS
+.DS_Store
+Thumbs.db
