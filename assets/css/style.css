@@ -995,18 +995,47 @@ a.stats-box:hover{
 }
 
 .rec-books-grid .card-book .p{
-  min-height: 118px;
+  min-height: 138px;
 }
 
-.rec-books-grid .card-book .p .clamp-2{
+.rec-books-grid .card-book .p .clamp-2,
+.rec-books-grid .card-book .book-card-title{
   min-height: 2.8em;
 }
 
-.rec-books-grid .card-book .p .clamp-1{
+.rec-books-grid .card-book .p .clamp-1,
+.rec-books-grid .card-book .book-card-author{
   min-height: 1.5em;
 }
 
-.rec-books-grid .card-book .p > :last-child{
+.book-card-meta{
+  min-height: 1.6em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.book-card-category{
+  display: inline-flex;
+  align-items: center;
+  max-width: 70%;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(47,111,255,.08);
+  color: #3156a8;
+  font-size: .76rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-card-year{
+  flex: 0 0 auto;
+}
+
+.book-card-stats{
   margin-top: auto !important;
 }
 

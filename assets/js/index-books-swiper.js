@@ -46,6 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const cover = (b.book_cover_path || "").trim();
       const coverSrc = cover || "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80";
       const id = parseInt(b.id, 10) || 0;
+      const author = (b.book_author || "Muallif ko'rsatilmagan").trim();
+      const year = parseInt(b.book_year, 10) || 0;
+      const category = (b.category_name || "").trim();
 
       html += `
         <div class="col-6 col-md-4 col-lg-3">
@@ -54,11 +57,15 @@ document.addEventListener("DOMContentLoaded", () => {
               <img src="${esc(coverSrc)}" alt="cover">
             </div>
             <div class="p">
-              <div class="fw-bold clamp-2">${esc(b.book_name)}</div>
-              <div class="muted small clamp-1">
-                ${esc(b.book_author || "Unknown")}${b.book_year ? " · " + (parseInt(b.book_year, 10) || "") : ""}
+              <div class="fw-bold clamp-2 book-card-title">${esc(b.book_name)}</div>
+              <div class="muted small clamp-1 book-card-author">
+                ${esc(author)}
               </div>
-              <div class="d-flex justify-content-between mt-2 small muted">
+              <div class="book-card-meta small muted">
+                ${category ? `<span class="book-card-category">${esc(category)}</span>` : `<span></span>`}
+                ${year ? `<span class="book-card-year">${year}</span>` : `<span></span>`}
+              </div>
+              <div class="d-flex justify-content-between mt-2 small muted book-card-stats">
                 <span>⭐ ${(Number(b.rating_avg || 0)).toFixed(2)} (${parseInt(b.rating_count || 0, 10) || 0})</span>
                 <span>👁 ${parseInt(b.read_count || 0, 10) || 0}</span>
               </div>
