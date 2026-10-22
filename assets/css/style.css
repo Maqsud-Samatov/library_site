@@ -1550,3 +1550,163 @@ a.stats-box:hover{
     width: min(52vw, 300px);
   }
 }
+
+/* ================= BRAND LINK (logo -> home) ================= */
+
+a.brand{
+  color: inherit;
+  text-decoration: none;
+  border-radius: 22px;
+}
+
+a.brand .title{
+  transition: color .18s ease;
+}
+
+a.brand:hover .title{
+  color: #cfe0ff;
+}
+
+a.brand:focus-visible{
+  outline: 2px solid rgba(147,197,253,.9);
+  outline-offset: 6px;
+}
+
+/* ================= CATEGORY PAGE (category_list.php) ================= */
+
+.category-sidebar{
+  border: 1px solid rgba(148,163,184,.22);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, .10);
+}
+
+.category-sidebar-head{
+  padding: 1rem 1.15rem;
+  background: linear-gradient(135deg, #1f52cf 0%, #0f2e75 100%);
+}
+
+.category-sidebar-head .fw-bold{
+  font-size: 1.02rem;
+  letter-spacing: .01em;
+}
+
+.category-sidebar-body{
+  padding: .6rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(47,111,255,.35) transparent;
+}
+
+.category-sidebar #catTabs{
+  gap: 4px !important;
+}
+
+.category-sidebar .cat-pill{
+  position: relative;
+  padding: .72rem .85rem .72rem 1.05rem;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+  color: #1e293b;
+  transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+/* Thin accent bar on the left edge */
+.category-sidebar .cat-pill::before{
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  border-radius: 3px;
+  background: transparent;
+  transition: background .18s ease;
+}
+
+.category-sidebar .cat-pill-name{
+  font-size: .9rem;
+  line-height: 1.3;
+  letter-spacing: .01em;
+}
+
+.category-sidebar .cat-pill-desc{
+  font-size: .8rem;
+  color: #64748b;
+}
+
+.category-sidebar .cat-pill-count{
+  flex: 0 0 auto;
+  min-width: 2.2rem;
+  padding: .32em .62em;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3349a3;
+  font-size: .74rem;
+  font-weight: 700;
+}
+
+.category-sidebar .cat-pill:hover{
+  background: #f3f6ff;
+  border-color: rgba(47,111,255,.16);
+  color: #1f52cf;
+  transform: translateX(2px);
+}
+
+.category-sidebar .cat-pill:hover::before{
+  background: rgba(47,111,255,.45);
+}
+
+.category-sidebar .cat-pill.active{
+  background: linear-gradient(135deg, #2f6fff, #1f52cf);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(31,82,207,.28);
+  transform: none;
+}
+
+.category-sidebar .cat-pill.active::before{
+  background: #2dd4bf;
+}
+
+.category-sidebar .cat-pill.active .cat-pill-desc{
+  color: rgba(255,255,255,.8);
+}
+
+.category-sidebar .cat-pill.active .cat-pill-count{
+  background: rgba(255,255,255,.2);
+  color: #fff;
+}
+
+/* Book grid: every card the same height regardless of title/author length */
+#booksGrid > [class*="col-"]{
+  display: flex;
+}
+
+#booksGrid .card-book{
+  width: 100%;
+  height: auto;
+  align-self: stretch;
+}
+
+#booksGrid .card-book .p{
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+#booksGrid .book-card-title{
+  line-height: 1.35;
+  min-height: 2.7em;   /* always reserve 2 lines */
+}
+
+#booksGrid .book-card-author{
+  display: -webkit-box !important;   /* .muted forces display:revert, which breaks clamp-1 */
+  line-height: 1.5;
+  min-height: 1.5em;
+}
+
+#booksGrid .book-card-stats{
+  margin-top: auto !important;
+}

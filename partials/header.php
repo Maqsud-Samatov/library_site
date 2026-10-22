@@ -66,14 +66,14 @@ if (!$hasAdminLink) {
 <body>
 <header class="topbar py-3">
   <div class="container topbar-shell d-flex align-items-center justify-content-between gap-3 flex-wrap">
-    <div class="brand">
+    <a class="brand" href="/" aria-label="<?= e($site_title) ?> — Bosh sahifa">
       <div class="brand-mark">
         <img class="img-hide-onerror" src="<?= e($logo_path) ?>" alt="logo" onerror="this.classList.add('is-hidden')">
       </div>
       <div class="brand-copy">
         <div class="title"><?= e($site_title) ?></div>
       </div>
-    </div>
+    </a>
 
     <nav class="d-flex gap-2 nav-pill flex-wrap" aria-label="Main menu">
       <?php foreach ($navbar as $item): ?>

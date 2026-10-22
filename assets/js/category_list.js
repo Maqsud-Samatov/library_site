@@ -64,16 +64,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       html += `
         <div class="col-6 col-md-4 col-lg-3">
-          <a class="card-book d-block" href="book.php?id=${id}">
+          <a class="card-book" href="book.php?id=${id}">
             <div class="cover">
-              <img src="${esc(coverSrc)}" alt="cover">
+              <img src="${esc(coverSrc)}" alt="cover" loading="lazy">
             </div>
             <div class="p">
-              <div class="fw-bold clamp-2">${esc(b.book_name)}</div>
-              <div class="muted small clamp-1">
+              <div class="fw-bold clamp-2 book-card-title">${esc(b.book_name)}</div>
+              <div class="muted small clamp-1 book-card-author">
                 ${esc(b.book_author || "Unknown")}${b.book_year ? " · " + (parseInt(b.book_year, 10) || "") : ""}
               </div>
-              <div class="d-flex justify-content-between mt-2 small muted">
+              <div class="d-flex justify-content-between mt-2 small muted book-card-stats">
                 <span>⭐ ${(Number(b.rating_avg || 0)).toFixed(2)} (${parseInt(b.rating_count || 0, 10) || 0})</span>
                 <span>👁 ${parseInt(b.read_count || 0, 10) || 0}</span>
               </div>
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setActiveTab(btn);
 
-      const name = btn.querySelector(".fw-bold")?.textContent?.trim() || "";
+      const name = btn.querySelector(".cat-pill-name")?.textContent?.trim() || "";
       if (titleEl) titleEl.textContent = name;
 
       load(1);

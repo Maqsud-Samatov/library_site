@@ -47,13 +47,17 @@ $firstCatName = $cats[0]['name'] ?? '';
                       type="button"
                       role="tab"
                       aria-selected="<?= $sel ?>">
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold"><?= e($c['name']) ?></span>
-                  <span class="badge text-bg-light"><?= (int)$c['cnt'] ?></span>
+                <div class="d-flex justify-content-between align-items-center gap-2">
+                  <span class="fw-bold cat-pill-name"><?= e($c['name']) ?></span>
+                  <span class="badge cat-pill-count"><?= (int)$c['cnt'] ?></span>
                 </div>
 
-                <?php if (!empty($c['description'])): ?>
-                  <div class="small muted mt-1 clamp-2"><?= e($c['description']) ?></div>
+                <?php
+                  // Many categories repeat their own name as the description — skip those.
+                  $desc = trim((string)($c['description'] ?? ''));
+                  if ($desc !== '' && mb_strtolower($desc) !== mb_strtolower(trim((string)$c['name']))):
+                ?>
+                  <div class="small muted mt-1 clamp-2 cat-pill-desc"><?= e($desc) ?></div>
                 <?php endif; ?>
               </button>
             <?php endforeach; ?>
@@ -110,7 +114,7 @@ $firstCatName = $cats[0]['name'] ?? '';
   </script>
 
   <!-- AJAX + pagination + global search -->
-  <script src="/assets/js/category_list.js"></script>
+  <script src="/assets/js/category_list.js?v=<?= filemtime(__DIR__ . '/assets/js/category_list.js') ?>"></script>
 
 <?php endif; ?>
 
