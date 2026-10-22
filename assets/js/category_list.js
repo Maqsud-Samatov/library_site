@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
               <img src="${esc(coverSrc)}" alt="cover" loading="lazy">
             </div>
             <div class="p">
-              <div class="fw-bold clamp-2 book-card-title">${esc(b.book_name)}</div>
-              <div class="muted small clamp-1 book-card-author">
+              <div class="fw-bold clamp-2 book-card-title" title="${esc(b.book_name)}">${esc(b.book_name)}</div>
+              <div class="muted small clamp-1 book-card-author" title="${esc(b.book_author || "")}">
                 ${esc(b.book_author || "Unknown")}${b.book_year ? " · " + (parseInt(b.book_year, 10) || "") : ""}
               </div>
               <div class="d-flex justify-content-between mt-2 small muted book-card-stats">

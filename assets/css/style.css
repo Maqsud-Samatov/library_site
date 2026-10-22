@@ -1690,7 +1690,16 @@ a.brand:focus-visible{
   align-self: stretch;
 }
 
+/* The legacy ".card-book .cover{height:100%}" rule makes the cover fill the
+   whole stretched card and pushes the text out of view — size it by ratio. */
+#booksGrid .card-book .cover{
+  height: auto;
+  aspect-ratio: 3 / 4;
+  flex: 0 0 auto;
+}
+
 #booksGrid .card-book .p{
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   gap: .3rem;
