@@ -1,5 +1,8 @@
-# uploads
-assets/uploads/
+# uploads (faqat PDF papkasini yopuvchi .htaccess repoda turadi)
+assets/uploads/*
+!assets/uploads/pdfs/
+assets/uploads/pdfs/*
+!assets/uploads/pdfs/.htaccess
 
 # configs with secrets
 app/config.php

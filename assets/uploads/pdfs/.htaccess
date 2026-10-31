@@ -1,0 +1,9 @@
+# PDF lar faqat view_pdf.php orqali (chipta bilan, shifrlangan holda) beriladi.
+# Bu papkadagi fayllarni brauzerda to'g'ridan-to'g'ri ochish va ro'yxatini ko'rish taqiqlangan.
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>
