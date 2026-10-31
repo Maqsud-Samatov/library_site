@@ -71,14 +71,14 @@ try {
       <?php else: ?>
         <div class="stats-box">PDF yuklanmagan.</div>
       <?php endif; ?>
-      <a class="btn btn-info" href="category_list.php">Kategoriyalarga qaytish</a>
+      <a class="btn btn-outline-secondary" href="category_list.php">Kategoriyalarga qaytish</a>
     </div>
 
     <!-- ✅ RECOMMENDATIONS (AJAX + pagination) -->
     <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mt-4">
       <div class="section-title m-0">Shu kategoriyadan boshqa kitoblar</div>
       <!-- category_list dagidek -->
-      <a class="btn btn-success" href="category_list.php">← Orqaga</a>
+      <a class="btn btn-outline-secondary" href="category_list.php">← Orqaga</a>
     </div>
 
     <div class="row g-3 mt-2" id="recGrid" aria-live="polite">
@@ -88,9 +88,9 @@ try {
     </div>
 
     <div class="d-flex justify-content-between align-items-center mt-3 gap-2 flex-wrap">
-      <button type="button" class="btn btn-success" id="recPrev">oldingi</button>
+      <button type="button" class="btn btn-outline-secondary" id="recPrev">oldingi</button>
       <div class="muted small"><span id="recIndicator">1 / 1</span></div>
-      <button type="button" class="btn btn-success" id="recNext">keyingi</button>
+      <button type="button" class="btn btn-outline-secondary" id="recNext">keyingi</button>
     </div>
 
   </div>

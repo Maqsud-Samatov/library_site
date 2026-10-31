@@ -15,7 +15,7 @@ $cats = $pdo->query("
     <div class="section-title">Kategoriyalar</div>
     <div class="muted">Kerakli yo‘nalishni tanlang va kitoblarni ko‘ring</div>
   </div>
-  <a class="btn btn-success" href="index.php">Bosh sahifa</a>
+  <a class="btn btn-outline-secondary" href="index.php">Bosh sahifa</a>
 </div>
 
 <div class="row g-3">

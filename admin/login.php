@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input class="form-control" name="password" type="password" required>
       </div>
       <button class="btn btn-success">Login</button>
-      <a class="btn btn-info text-white" href="../index.php">Saytga qaytish</a>
+      <a class="btn btn-outline-secondary" href="../index.php">Saytga qaytish</a>
     </form>
 
     <?php if (isset($_GET['dbg']) && (string)$_GET['dbg'] === '1'): ?>

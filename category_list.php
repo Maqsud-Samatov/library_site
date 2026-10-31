@@ -18,7 +18,7 @@ $firstCatName = $cats[0]['name'] ?? '';
     <div class="section-title">Categoriyalar</div>
     <div class="muted">Kategoriyani tanlang — kitoblar zamonaviy kartalarda chiqadi</div>
   </div>
-  <a class="btn btn-success" href="index.php">← Orqaga</a>
+  <a class="btn btn-outline-secondary" href="index.php">← Orqaga</a>
 </div>
 
 <?php if (!$cats): ?>
@@ -94,13 +94,13 @@ $firstCatName = $cats[0]['name'] ?? '';
 
         <!-- PAGINATION CONTROLS -->
         <div class="d-flex justify-content-between align-items-center mt-3 gap-2 flex-wrap">
-          <button type="button" class="btn btn-success" id="catPrev">oldingi</button>
+          <button type="button" class="btn btn-outline-secondary" id="catPrev">oldingi</button>
 
           <div class="muted small">
             <span id="catIndicator">1 / 1</span>
           </div>
 
-          <button type="button" class="btn btn-success" id="catNext">keyingi</button>
+          <button type="button" class="btn btn-outline-secondary" id="catNext">keyingi</button>
         </div>
 
       </div>

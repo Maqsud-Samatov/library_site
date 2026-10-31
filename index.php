@@ -152,9 +152,9 @@ if ($heroAuthor === '' || mb_strtolower($heroAuthor) === 'online library') {
   </div>
 
   <div class="books-sw-nav">
-    <button type="button" class="btn btn-success books-prev">Oldingi</button>
+    <button type="button" class="btn btn-outline-secondary books-prev">Oldingi</button>
     <div class="books-page-indicator muted small" id="booksIndicator"></div>
-    <button type="button" class="btn btn-success books-next">Keyingi</button>
+    <button type="button" class="btn btn-outline-secondary books-next">Keyingi</button>
   </div>
 </section>
 

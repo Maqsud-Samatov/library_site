@@ -38,9 +38,9 @@ require_once __DIR__ . "/partials/header.php";
 </style>
 
 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-4 mb-3">
-  <a class="btn btn-success" href="book.php?id=<?= (int)$book['id'] ?>">← Orqaga</a>
+  <a class="btn btn-outline-secondary" href="book.php?id=<?= (int)$book['id'] ?>">← Orqaga</a>
   <div class="fw-bold"><?= e($book['book_name']) ?></div>
-  <a class="btn btn-info" href="category_list.php">Kategoriyalar</a>
+  <a class="btn btn-outline-secondary" href="category_list.php">Kategoriyalar</a>
 </div>
 
 <?php if ($limited): ?>
